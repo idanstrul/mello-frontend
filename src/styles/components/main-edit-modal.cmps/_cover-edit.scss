@@ -1,0 +1,272 @@
+.cover-edit {
+    * {
+
+        transition: all .3s;
+    }
+
+    .attach {
+        display: none;
+        // position: absolute;
+        background-color: black;
+        // height: 32px;
+        // width: 280px;
+        // opacity: 0;
+        // z-index: -1;
+    }
+
+    .btn-remove-cover,
+    .btn-upload-cover,
+    .btn-search-photo {
+        // position: static;
+        // margin-block-start: 10px !important;
+        cursor: pointer;
+        text-align: center;
+        line-height: 32px;
+        display: block;
+        font-family: seg;
+        font-size: 14px;
+        width: 280px;
+        height: 32px;
+        background-color: #091e420a;
+        border: none;
+        border-radius: 3px;
+        margin-block-start: 10px;
+
+        &:hover {
+            background-color: #091e4214;
+        }
+
+        &:active {
+            background-color: #e4f0f6;
+            color: #0079bf;
+        }
+    }
+
+    h4 {
+        font-size: 12px;
+        color: #5e6c84d8;
+        font-family: segBold;
+        margin-inline-start: 3px;
+
+        &:first-child {
+            // margin-block-end: -15px;
+        }
+
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+
+    /* HIDE RADIO */
+    [type=radio] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* IMAGE STYLES */
+    [type=radio]+.cover-opt {
+        cursor: pointer;
+        border-radius: 3px;
+    }
+
+    /* CHECKED STYLES */
+    [type=radio]:checked+.cover-opt,
+    [type=radio]:checked+.btn-clr {
+        // outline: 2px solid #f00;
+        box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0079bf;
+    }
+
+    .cover-opt {
+
+
+        height: 62px;
+        width: 134px;
+        border: 1px solid #091e4214;
+        // background-color: lightgray;
+        cursor: pointer;
+        margin: 4px;
+
+        .cover-opt-lines {
+
+
+            &.colorized {
+                opacity: 1;
+
+                div {
+                    background: #6B778C;
+                    opacity: 1;
+                }
+            }
+
+            .line {
+                // background-color: black;
+                width: 122px;
+                height: 4px;
+                border-radius: 2px;
+                margin-top: 4px;
+                margin-inline-start: 5px;
+            }
+
+            .line:nth-child(2) {
+                width: 98px;
+                // background-color: black;
+            }
+
+            .cube {
+                width: 16px;
+                height: 6px;
+                border-radius: 2px;
+                background-color: black;
+                display: inline-block;
+                margin: 1px;
+                position: relative;
+                bottom: 2px;
+                left: 4px;
+                background: #5E6C84;
+                opacity: 0.3;
+            }
+
+            .circle {
+                // background-color: black;
+                border-radius: 50px;
+                width: 10px;
+                height: 10px;
+                position: relative;
+                left: 120px;
+                bottom: 15px;
+                background: #5E6C84;
+                opacity: 0.3;
+            }
+        }
+
+
+        &.small {
+            .cover-opt-header {
+                border-radius: 2px 2px 0 0;
+                width: 132px;
+                height: 28px;
+                background: #5E6C84;
+                opacity: 0.3;
+                background-position: center;
+                background-size: cover;
+
+            }
+
+            .line {
+                background: #5E6C84;
+                opacity: 0.3;
+            }
+        }
+
+        &.big {
+            .big-container {
+                border-radius: inherit;
+                height: 62px;
+                background: #5E6C84;
+                opacity: 0.3;
+                position: relative;
+                bottom: 5px;
+                background-position: center;
+                background-size: cover;
+
+                // .line {
+                //     background-color: white;
+                // }
+            }
+
+            .cover-opt-lines {
+                position: relative;
+                top: 40px;
+            }
+
+            .line {
+                background-color: $clr-base;
+            }
+        }
+    }
+
+    .btn-cover-container {
+        gap: 7px;
+        // margin: 0 auto;
+        margin-block-start: 10px;
+        // padding-inline-start: 10px !important;
+        max-height: 97px;
+        overflow-y: auto;
+        padding: 5px;
+
+        // justify-content: space-between !important;
+        &.img-container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 272px;
+            // padding-inline-start: 13px;
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #6363633c;
+            border-radius: 3px;
+        }
+
+        .cover-opt-img {
+            width: 80px !important;
+            height: 40px !important;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+
+        .btn-clr {
+            cursor: pointer;
+            width: 48px;
+            height: 30px;
+            border-radius: 3px;
+
+            &:hover {
+                filter: saturate(85%) brightness(85%);
+            }
+
+            &:active {
+                filter: saturate(70%) brightness(70%);
+            }
+
+            &.green {
+                background-color: #7BC86C;
+            }
+
+            &.yellow {
+                background-color: #f5dd29;
+            }
+
+            &.orange {
+                background-color: #FFAF3F;
+            }
+
+            &.red {
+                background-color: #EF7564;
+            }
+
+            &.purple {
+                background-color: #CD8DE5;
+            }
+
+            &.blue {
+                background-color: #5BA4CF;
+            }
+
+            &.lightblue {
+                background-color: #29CCE5;
+            }
+
+            &.turquoise {
+                background-color: #6DECA9;
+            }
+
+            &.pink {
+                background-color: #FF8ED4;
+            }
+
+            &.navy {
+                background-color: #172B4D;
+            }
+
+        }
+    }
+}

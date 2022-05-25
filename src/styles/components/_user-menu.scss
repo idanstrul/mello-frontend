@@ -1,0 +1,40 @@
+.user-menu {
+    cursor: auto;
+    left: calc(100% - 309px);
+    top: 43px;
+    z-index: 6;
+    min-height: unset;
+    color: #5e6c84;
+
+    & .account-info {
+        display: flex;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+
+        & .account-details {
+            padding-left: 8px;
+            display: flex;
+            flex-direction: column;
+            color: #172b4d;
+
+            & .username {
+                color: #b3bac5;
+            }
+        }
+    }
+
+    .logout {
+        color: #172b4d;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 13px;
+        margin-bottom: 6px;
+    }
+
+    .group-edit-header {
+        position: relative;
+        font-weight: 600;
+        font-size: 16px;
+    }
+}

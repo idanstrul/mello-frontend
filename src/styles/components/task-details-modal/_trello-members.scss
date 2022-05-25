@@ -1,0 +1,31 @@
+.trello-members {
+    ul {
+        display: flex;
+        gap: 4px;
+        li button.btn-round{
+            // margin: 3px 0px 0px 4px;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            // padding: 8px;
+            font-size: 16px;
+            border: none;
+            background-color: #091e420a;
+            color: #172b4d;
+
+            &:hover{
+                background-color: #091e4214;
+                color: #091e42;
+            }
+
+            &::before{
+                font-family: trellicons;
+                content: "\e901";
+                vertical-align: middle;
+            }
+        }
+    }
+
+    margin-bottom: 1px;
+
+}

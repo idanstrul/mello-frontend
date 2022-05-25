@@ -1,0 +1,26 @@
+.attachment-edit {
+    justify-content: space-between;
+    min-height: 60px;
+
+    div.status-msg {
+        height: 60px;
+
+        span.secondary-section-title {
+            font-size: 20px !important;
+            flex-grow: 1;
+        }
+    }
+
+    img.upload-icon {
+        width: 150px;
+        margin: auto;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    img.status-icon {
+        width: 100px;
+        margin: auto;
+        display: block;
+    }
+}

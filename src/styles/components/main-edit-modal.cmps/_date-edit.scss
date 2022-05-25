@@ -1,0 +1,200 @@
+.date-edit{
+// min-height: 500px;
+.date-title{
+    font-family: segBold;
+    color: #5e6c84;
+    font-size: 12px;
+    position: relative;
+    bottom: 50px;
+    z-index: 900;
+}
+.dp__menu{
+    .dp__active_date{
+            background-color: #42526e;
+
+    }
+    .btn-save-date{
+        @include defaultBtn;
+        // z-index: 900;
+        // position: fixed;
+            width: 280px;
+            margin-inline-start: -9px;
+            // align-self: center;
+            // justify-content: center;
+            // margin: 0 auto;
+            // z-index: 10;
+        }
+        border: none;
+        overflow: hidden;
+        height: 400px;
+        .dp__selection_preview{
+            position: absolute;
+            bottom: 10px;
+            font-size: 14px;
+            color: $clr-dark-title;
+            // div:first-child{
+            //     position: absolute;
+            //     left: 0;
+            //     bottom: 0;
+            // }
+            // div:not(:first-child){
+            //     position: absolute;
+            //     bottom: 0;
+            //     left: 150px;
+            // }
+        }
+        .dp__month_year_row{
+            height: 50px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .dp__month_year_select{
+            font-family: segBold;
+            color: $clr-dark-title;
+            width: 50px;
+        }
+        .dp__inner_nav{
+            color: #A5ADBA;
+        }
+        .dp__month_year_col_nav{
+            // width: 20px;
+            // height: 20px;
+            transform: scale(0.9);
+            &:first-child{
+               position: absolute;
+               left: 5px;
+            }
+            &:nth-child(4){
+                position: absolute;
+                right: 5px;
+
+            }
+        }
+        .dp__calendar_header_item{
+            color: #6b778c;
+            font-size: rem(12px);
+            font-family: segBold;
+            margin-bottom: -10px;
+            width: 40px;
+        }
+        .dp__calendar_header_separator{
+            display: none;
+        }
+        .dp__cell_inner{
+            // background-color: #42526e;
+            border-radius: 3px;
+            width: 40px;
+            height: 32px;
+        }
+        .dp__action_row{
+            display: block;
+        }
+        .dp__today{
+            border: none;
+            color: #0052cc;
+            font-family: segBold !important;
+            border-bottom: 2.75px solid #0052cc;
+            border-radius: 3px 3px 0px 0px;
+        }
+        .dp__range_start, .dp__range_end{
+            font-family: seg;
+            border: none;
+            color: $clr-base;
+            background-color: #42526e;
+            border-radius: 3px;
+        }
+        .dp__time_input:first-child{
+            // display: none;
+        }
+    }
+}
+
+
+.el-calendar {
+    padding: 16px 0;
+}
+
+
+.el-calendar__body {
+    padding: 0;
+}
+
+.el-calendar-day {
+    padding: 0;
+    border-radius: 3px;
+}
+
+.el-calendar-day {
+    height: 28px !important;
+    width: 100% !important;
+    padding: 4px 9px !important;
+    text-align: center;
+}
+
+td.prev {
+    border: none !important;
+    color: #6b778c;
+
+}
+
+td.current {
+    border: none !important;
+    
+}
+
+td.next {
+    border: none !important;
+    color: #6b778c;
+
+}
+
+thead {
+    font-family: "segSemiBold";
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+th {
+    color: #6b778c !important;
+}
+
+td.current {
+    color: #091e42;
+}
+
+.el-calendar-day:hover {
+    background-color: rgb(235, 236, 240) !important;
+}
+
+.el-calendar-day:active {
+    background-color: rgb(222, 235, 255) !important;
+}
+
+td.current.is-today div {
+    position: relative;
+    color: rgb(0, 82, 204);
+    font-weight: bold;
+}
+
+td.current.is-today div::after {
+    background-color: rgb(0, 82, 204);
+    bottom: 2px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 2px;
+    position: absolute;
+    right: 2px;
+}
+
+td.current.is-selected .el-calendar-day {
+    background-color: rgb(66, 82, 110);
+    color: white;
+    &:hover {
+        color: #091e42;
+    }
+}
+
+.el-calendar-table td.is-selected {
+    background-color: transparent;
+}

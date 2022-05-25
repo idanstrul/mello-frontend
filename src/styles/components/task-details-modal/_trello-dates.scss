@@ -1,0 +1,46 @@
+.trello-dates{
+    .flex-container.flex.align-center {
+        gap: 4px;
+    }
+
+    button{
+        gap: 4px;
+    }
+    
+    svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: bottom;
+        overflow: hidden;
+    }
+
+    span.status-tag{
+        font-size: 0.85rem;
+        font-family: seg;
+        border-radius: 2px;
+        line-height: 1.143rem;
+        color: white;
+        padding: 0 4px;
+        display: block;
+        margin-inline-start: 4px;
+
+        &.complete, &.done{
+            background-color: $clr-labe0;
+        }
+
+        &.overdue, &.over-due{
+            background-color: #eb5a46;
+        }
+
+        &.in-progress{
+            background-color: darken($clr-labe1, 3%);
+        }
+
+        &.due-soon{
+            background-color: #F2D600;
+            color: #172B4D;
+        }
+    }
+
+}

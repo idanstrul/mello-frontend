@@ -1,0 +1,86 @@
+/* flex */
+
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.space-around {
+    justify-content: space-around;
+}
+
+.flex.center {
+    justify-content: center;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.wrap {
+    flex-wrap: wrap;
+}
+
+/* typography */
+
+.text-l {
+    font-size: 1.43rem; //20px
+}
+
+.text-m {
+    font-size: 1.143rem; //16px
+}
+
+.text-s {
+    font-size: 1rem; //14px
+}
+
+/* list */
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+}
+
+/* btn */
+
+.btn-container {
+    border-radius: 3px;
+    border: 0;
+    text-decoration: none;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.048);
+    box-shadow: none;
+    color: #ffffff;
+    display: flex;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 0 0;
+    padding: 0;
+    white-space: nowrap;
+    min-width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+        background-color: lighten(rgba(255, 255, 255, 0.377), 20);
+    }
+    &:active {
+        background-color: lighten(rgba(255, 255, 255, 0.6), 50);
+    }
+}

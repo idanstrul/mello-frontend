@@ -1,0 +1,94 @@
+@mixin defaultBtn {
+  background-color: #0079bf;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  height: 33px;
+  text-align: center;
+
+  &:hover {
+    background-color: #026aa7;
+  }
+
+  &:active {
+    background-color: #055a8c;
+  }
+}
+
+@mixin mainHeaderBtn {
+  cursor: pointer;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.375);
+  }
+
+  img {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@mixin add-trello-icon($icon-tag) {
+  & {
+    position: relative;
+  }
+
+  &::before {
+    content: $icon-tag;
+    color: $clr-dark-icon;
+    display: inline-block;
+    font-family: trellicons;
+    margin-inline-end: 6px;
+    margin-inline-start: -6px;
+    font-size: 1.143em;
+    line-height: 1.25;
+    vertical-align: bottom;
+  }
+
+  &.section-title::before {
+    vertical-align: middle;
+    font-size: 1.714rem;
+
+    @media (min-width: 784px) {
+      position: absolute;
+      left: -30px;
+      top: -5px;
+    }
+
+    .modal-main & {
+      margin-inline-end: 12px;
+    }
+  }
+}
+
+@mixin trello-label-shadow-box($color) {
+  &:hover {
+    margin-left: 4px;
+    box-shadow: -8px 0 $color;
+  }
+}
+
+@mixin quite-icon-btn($iconTag) {
+  border: none;
+  // width: 15px;
+  font-size: rem(24px);
+  color: #6b778c;
+  font-family: trellicons;
+
+  &::before {
+    content: $iconTag;
+  }
+
+  &:hover {
+    color: #172b4d;
+  }
+}

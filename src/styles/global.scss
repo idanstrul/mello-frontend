@@ -1,0 +1,55 @@
+/* SETUP  */
+@import "setup/functions";
+@import "setup/variables";
+@import "setup/mixins";
+@import "setup/typography";
+
+/* COMPONENTS */
+
+// @import "../assets/favicon.png";
+@import "components/screen";
+@import "components/main-header";
+@import "components/board-header";
+@import "components/user-menu";
+@import "components/board-group";
+@import "components/custom-menu";
+@import "components/group-add";
+@import "components/task-preview";
+@import "components/user-avatar";
+@import "components/board-details";
+@import "components/task-add";
+@import "components/group-menu";
+@import "components/home";
+@import "components/login-signup";
+@import "components/main-edit-modal.scss";
+@import "components/board-add-menu";
+@import "components/board-list";
+
+/* TASK-DETAILS-CMPS */
+
+@import "components/task-details-modal/activity-log";
+@import "components/task-details-modal/task-description";
+@import "components/task-details-modal/task-details";
+@import "components/task-details-modal/trello-checklist";
+@import "components/task-details-modal/trello-labels";
+@import "components/task-details-modal/trello-members";
+@import "components/task-details-modal/trello-txt-input";
+@import "components/task-details-modal/trello-dates";
+@import "components/task-details-modal/trello-attachments";
+
+/* MAIN-EDIT-MODAL-CMPS */
+@import "components/main-edit-modal.cmps/labels-edit.scss";
+@import "components/main-edit-modal.cmps/members-edit.scss";
+@import "components/main-edit-modal.cmps/members-edit.scss";
+@import "components/main-edit-modal.cmps/date-edit.scss";
+@import "components/main-edit-modal.cmps/cover-edit";
+@import "components/main-edit-modal.cmps/attachment-edit";
+@import "components/main-edit-modal.cmps/teleport-container.scss";
+@import "components/main-edit-modal.cmps/search-photo";
+
+/* BASE */
+
+@import "basic/base";
+@import "basic/helpers";
+@import "basic/mq";
+@import "basic/animate";

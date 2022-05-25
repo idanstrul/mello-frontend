@@ -1,0 +1,25 @@
+.members-edit{
+    ul{
+
+        max-height: 250px;
+    }
+    li {
+        gap: 8px;
+        padding: 4px; 
+        margin-bottom: 2px;
+        position: relative;
+
+        &:hover{
+            cursor: pointer;
+            background-color: #091e420a;
+            color: #091e42;        
+        }
+        
+        &.selected::before {
+            padding: 6px;
+            text-align: center;
+            color: #42526e;
+
+        }
+    }
+}

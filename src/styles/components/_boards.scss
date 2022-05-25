@@ -1,0 +1,23 @@
+.boards-page {
+    background-color: white;
+    min-height: 95.5vh;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    & .title {
+        margin: 30px auto 0;
+        letter-spacing: 1px;
+        text-align: center;
+        font-size: 2.5rem;
+        color: #172b4d;
+        grid-column: 2;
+        grid-row: 1;
+    }
+    & .container {
+        display: grid;
+        grid-template-columns: 1fr minmax(340px, 1180px) 1fr;
+        grid-template-rows: 80px 1fr;
+        padding-bottom: 50px;
+    }
+}

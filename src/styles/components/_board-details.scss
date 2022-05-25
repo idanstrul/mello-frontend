@@ -1,0 +1,50 @@
+.board-details {
+
+    // height: calc(100vh - 430px) !important;
+    // .bg{
+    //     background-image: url(../assets/bg.jpg);
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    //     position: fixed;
+    //     width: 100v;
+    //     height: auto;
+    // }
+    // ::-webkit-scrollbar {
+    //     border-radius: 4px;
+    //     height: 12px;
+    //     border-radius: 10px;
+    //   }
+    //   ::-webkit-scrollbar-thumb {
+    //     background: rgba(255, 255, 255, 0.253);
+    //     border-radius: 4px;
+    //     // margin: 5px;
+    //   }
+    //   ::-webkit-scrollbar-track {
+    //     // margin: 25px;
+    //     // margin-bottom: 10px;
+    //       border-radius: 4px;
+    //       background: #00000038; 
+    //     }
+    .group-list {
+        // padding-block-end: 70px !important;
+        width: 99%;
+        position: absolute;
+        right: 0;
+        // margin: 0 auto;
+        // margin-inline-start: 10px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        // max-height: 820px;
+        // height: fit-content;
+        // height: calc(100vh - 200px);
+
+        height: calc(100vh - 103px);
+
+        @media (max-width: 780px) {
+            height: calc(100vh - 140px);
+
+            top: 130px;
+        }
+    }
+}

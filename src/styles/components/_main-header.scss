@@ -1,0 +1,79 @@
+.main-header {
+    // width: 100vw;
+    height: 43px;
+    button {
+        color: $clr-base;
+        @include mainHeaderBtn;
+        margin-inline-start: 5px;
+        margin-block-end: 2px;
+    }
+    .btn-opt {
+        // position:fixed;
+        .img-arrow {
+            width: auto;
+            transform: scale(0.45);
+            position: relative;
+            top: 3px;
+            right: 5px;
+            margin-inline-end: -15px;
+        }
+        padding: 0 11px;
+        height: 32px;
+        line-height: 32px;
+        &.create {
+            background-color: rgba(255, 255, 255, 0.25);
+            margin-inline-start: 15px;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.375);
+            }
+        }
+    }
+    .btn-boards,
+    .btn-logo {
+        width: 36px;
+    }
+    .btn-logo {
+        margin-inline-start: 0px;
+        width: 93px;
+        padding-inline-start: 1px;
+        img {
+            width: auto;
+        }
+    }
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    .user-avatar {
+        position: absolute;
+        right: 5px;
+        margin-bottom: 2px;
+        div {
+            font-size: 17px;
+        }
+    }
+}
+
+.material-icons-outlined {
+    font-size: rem(19px);
+}
+
+.header-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > button:first-child {
+        font-weight: 100;
+        font-size: 24px;
+        transition: background-color 0.15s;
+
+        &:hover {
+            background-color: darken(rgba(255, 255, 255, 0.3), 15);
+        }
+    }
+
+    & > .avatar:nth-child(2) {
+        margin-right: 4px;
+    }
+}

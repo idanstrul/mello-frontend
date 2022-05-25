@@ -1,0 +1,104 @@
+.labels-edit {
+    .label {
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: 700;
+        margin: 0 0 4px;
+        min-height: 32px;
+        padding: 6px 12px;
+        position: relative;
+        transition: padding 85ms, margin 85ms, box-shadow 85ms;
+
+        &.green {
+            @include trello-label-shadow-box(#519839)
+        }
+        &.yellow {
+            @include trello-label-shadow-box(#d9b51c)
+        }
+        &.orande {
+            @include trello-label-shadow-box(#cd8313)
+        }
+        &.red {
+            @include trello-label-shadow-box(#b04632)
+        }
+        &.purple {
+            @include trello-label-shadow-box(#89609e)
+        }
+        &.blue {
+            @include trello-label-shadow-box(#055a8c)
+        }
+        &.light-blue {
+            @include trello-label-shadow-box(#0098b7)
+        }
+        &.light-green {
+            @include trello-label-shadow-box(#4bbf6b)
+        }
+        &.pink {
+            @include trello-label-shadow-box(#c9558f)
+        }
+        &.black {
+            @include trello-label-shadow-box(#091e42)
+        }
+
+        span {
+            max-width: calc(100% - 32px);
+            display: inline-block;
+        }
+        
+        input{
+            font: inherit;
+            color: inherit;
+            border: none;
+            outline: none;
+            width: calc(100% - 32px);
+            background-color: inherit;
+            &::placeholder{
+                color: white;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    li {
+        padding-right: 36px;
+        position: relative;
+    }
+
+    .edit-icon {
+        font-size: 16px;
+        height: 32px;
+        line-height: 20px;
+        width: 32px;
+        font-family: trellicons;
+        text-align: center;
+        border-radius: 3px;
+        padding: 6px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        &::after {
+            content: "\e928";
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: #091e4214;
+        }
+    }
+
+    .primary-btn{
+        background-color: #0079bf;
+
+        &:hover{
+            background-color: #026aa7;
+        }
+    }
+
+    .controlls{
+        margin-top: 20px;
+        button{
+            margin: 0;
+        }
+    }
+}

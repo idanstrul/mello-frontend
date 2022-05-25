@@ -1,0 +1,17 @@
+.teleport-container{
+    p.msg{
+        margin-bottom: 8px;
+    }
+
+    button.delete-btn.btn {
+        width: 100%;
+        color: #fff;
+        background-color: #b04632;
+        margin: 8px 4px 0 0;
+
+        &:hover{
+            background-color: #933b27;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.task-add{
+}
+
+.task-add form{
+    // position: ;
+    // background-color: #0909a8;
+    textarea{
+        outline: none;
+        border: none;
+        width: 255px !important;
+        margin: 0 auto;
+        padding-inline-start: 7px;
+        padding-block-start: 7px;
+        margin-inline-end: 5px;
+        border-radius: 3px;
+        border-bottom: 1px solid #b2b9c5;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    }
+    button:first-child{
+        @include defaultBtn;
+        margin-inline-start: 10px;
+        padding-inline-start: 12px;
+        padding-inline-end: 12px;
+        margin-block-start: 8px;
+        margin-block-end: 8px;
+    }
+    button:nth-child(2){
+        position: relative;
+        top: 5px;
+        left: 8px;
+        border: none;
+        // width: 15px;
+        font-size: rem(24px);
+        color: #6b778c;
+        font-family: trellicons;
+        &::before{
+            content: "\e91c"; 
+        }
+        &:hover{
+            color: #172b4d;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+.group-add {
+    margin-inline-end: 10px;
+    div{
+        width: 272px;
+        height: 40px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 2px;
+        color: rgb(255, 255, 255);
+        background-color: hsla(0, 0%, 100%, 0.2);
+        font-weight: 400;
+        transition: background-color .2s ease-in-out;
+        span:first-child{
+            font-family: trellicons;
+            font-size: rem(16px) !important;
+            margin-block-start: 2px;
+            margin-inline-end: 4px;
+            margin-inline-start: 3px;
+        }
+        span:first-child::before{
+            content: "\e901";
+        }
+        &:hover{
+            background-color: hsla(0, 0%, 100%, 0.3);
+        }
+        span:first-child{
+            // font-size: rem(23px);
+            // padding-inline-start: 3px;
+            // padding-inline-end: 3px;
+            // padding-block-end: 3px;
+        }
+        span:not(:first-child){
+            margin-block-end: 3.25px;
+           padding-block-start: 3px;
+        }
+    }
+}
+
+.group-edit{
+    min-width: 272px;
+    background-color: $clr-group-bg;
+    border-radius: 3px;
+    input{
+        border-style: solid;
+        border-color: $clr-input-ol;
+        height: 34px;
+        width: 264px;
+        margin-inline-start: 4px;
+        margin-block-start: 5px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        padding: 5px 10px;
+    }
+    button:first-child{
+        @include defaultBtn;
+        padding: 0px 12px;
+        margin-inline-start: 4px;
+        margin-block-start: 5px;
+        margin-block-end: 5px;
+
+    }
+    button:nth-child(2){
+        position: relative;
+        top: 5px;
+        left: 8px;
+        border: none;
+        // width: 15px;
+        font-size: rem(24px);
+        color: #6b778c;
+        font-family: trellicons;
+        &::before{
+            content: "\e91c"; 
+        }
+        &:hover{
+            color: #172b4d;
+        }
+    }
+}
