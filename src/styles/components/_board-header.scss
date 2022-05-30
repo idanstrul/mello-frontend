@@ -8,6 +8,7 @@
         @media (max-width: 780px) {
             position: absolute;
             top: 90px;
+            // left: 180px;
             right: 135px;
         }
 
@@ -63,6 +64,7 @@
         }
 
         @media (max-width: 780px) {
+            // right: 10px;
             top: 90px;
         }
     }
@@ -145,7 +147,7 @@
         @media (max-width: 780px) {
             position: absolute;
             top: 90px;
-            right: 130px;
+            left: 10px;
             display: none;
         }
     }
@@ -155,7 +157,10 @@
         color: hsla(0, 0%, 100%, 0.3);
 
         @media (max-width: 780px) {
+            display: none;
+
             &.sub {
+                display: block;
                 position: absolute;
                 top: 90px;
                 right: 120px;

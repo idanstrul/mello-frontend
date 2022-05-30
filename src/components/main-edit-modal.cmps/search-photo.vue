@@ -18,7 +18,7 @@
        <section  v-if="res">
            <h4>Results</h4>
            <section class="search-results flex wrap">
-              <div @click="setImg(img)" class="res-container" v-for="img in res" :key="img"><img :src="img.small" alt=""></div>  
+              <div @click.stop="setImg(img)" class="res-container" v-for="img in res" :key="img"><img :src="img.small" alt=""></div>  
            </section>
        </section>
     </section>

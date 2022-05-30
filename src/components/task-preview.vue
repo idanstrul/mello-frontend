@@ -31,7 +31,9 @@
     <span @click.stop="toggleLabels" @mouseover="hover=true" @mouseleave="hover=false" v-for="l in task.labelIds" :key="l" class="task-preview-label" :class="getClass" :style="getStyle(l)"><span>{{ getLabelText(l) }}</span></span>
   </section>
 <p>{{ task.title }}</p>
-<section v-if="checkBadges" class="task-preview-badges flex wrap">
+<section v-if="checkBadges" class="task-preview-badges flex  sapce-between">
+  <section :style="getHeight" class="flex">
+
 <section v-if="task.startDate || task.dueDate" class="task-preview-date">
   <div  class="start-only" v-if="task.startDate && !task.dueDate">
     <span></span>
@@ -48,10 +50,32 @@
     <span>{{ dueDate }}</span>
   </div>
 </section>
+<section v-if="task.comments" class="task-preview-comments">
+  <span></span>
+  <span>{{ task.comments.length }}</span>
+</section>
+<section v-if="task.attachments" class="task-preview-attachments">
+  <span></span>
+  <span>{{ task.attachments.length }}</span>
+</section>
+<section v-if="task.checklists" :class="checkComplete" class="task-preview-checklists">
+  <section class="" v-if="task.checklists.length">
+
+  <span></span>
+  <span>{{ checklistComplete }}</span>
+  <span>/</span>
+  <span>{{ checklistTotal }}</span>
+  </section>
+</section>
+  </section>
+
 <!-- <div class=""> -->
-<section :style="getWidth" v-if="task.members" class="task-members flex">
+  <section>
+
+<section :style="getWidth" v-if="task.members" class="task-members ">
   <user-avatar v-for="m in task.members" :key="m._id" :user="m"></user-avatar>
 </section>
+  </section>
 <!-- </div> -->
 </section>
 </section>
@@ -65,6 +89,8 @@
 
 import userAvatar from "./user-avatar.vue"
 import { Container, Draggable } from "vue3-smooth-dnd";
+// import Container from 'C:/dev/vue3-smooth-dnd/packages/lib/src/components/Container.js'
+// import Draggable from 'C:/dev/vue3-smooth-dnd/packages/lib/src/components/Draggable.js'
 import { utilService } from "../services/util.service";
 import format from 'date-fns/format'
 import { tr } from 'date-fns/locale';
@@ -176,6 +202,31 @@ export default {
     },
   },
   computed: {
+    checkComplete(){
+      var complete = true
+      this.task.checklists.forEach(c => {
+        c.todos.forEach(t => {
+          if(!t.isDone) complete = false
+        });
+      });
+      if(complete) return 'complete'
+    },
+    checklistComplete(){
+      var count = 0
+      this.task.checklists.forEach(c => {
+      c.todos.forEach(cc => {
+        if(cc.isDone) count++
+      }) 
+      })
+      return count
+    },
+    checklistTotal(){
+      var count = 0
+      this.task.checklists.forEach(c => {
+       count += c.todos.length
+      })
+      return count
+    },
     checkStyle(){
       if(this.task.style){
         if(this.task.style.size === 'big')
@@ -205,9 +256,32 @@ export default {
       var badgeCount = 0
       if(this.task.startDate || this.task.dueDate) badgeCount++
       if(this.task.comments) badgeCount++
-      if (badgeCount > 2 || badgeCount === 0){
-        return 'width: 100%'
+      if(this.task.checklists) badgeCount++
+      if(this.task.attachments) badgeCount++
+      if (badgeCount > 2){
+        // return 'width: 100%'
+        return 'margin-block-start: 30px; position: absolute; right: 0;'
+        // return
       }
+    },
+    getHeight(){
+      var badgeCount = 0
+      if(this.task.startDate || this.task.dueDate) badgeCount++
+      if(this.task.comments) badgeCount++
+      if(this.task.checklists) badgeCount++
+      if(this.task.attachments) badgeCount++
+      if (badgeCount > 2 && this.task.members){
+        if(this.task.members.length)
+        return 'margin-block-end: 37px'
+      }
+      // if (badgeCount && !this.task.members){
+      //   // if(this.task.members.length)
+      //   return 'margin-block-end: 37px'
+      // }
+      // if (badgeCount && this.task.members){
+      //   if(!this.task.members.length)
+      //   return 'margin-block-end: 37px'
+      // }
     },
     getDateBg(){
       if (this.task.startDate && !this.task.dueDate)
