@@ -65,6 +65,8 @@
 
 import userAvatar from "./user-avatar.vue"
 import { Container, Draggable } from "vue3-smooth-dnd";
+// import Container from 'C:/dev/vue3-smooth-dnd/packages/lib/src/components/Container.js'
+// import Draggable from 'C:/dev/vue3-smooth-dnd/packages/lib/src/components/Draggable.js'
 import { utilService } from "../services/util.service";
 import format from 'date-fns/format'
 import { tr } from 'date-fns/locale';

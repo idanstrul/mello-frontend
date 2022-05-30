@@ -46,6 +46,8 @@ import taskAdd from "./task-add.vue"
 import { utilService } from "../services/util.service"
 import { boardService } from '../services/board.service'
 import { Container, Draggable } from "vue3-smooth-dnd";
+// import Container from 'C:/dev/vue3-smooth-dnd/packages/lib/src/components/Container.js'
+// import Draggable from 'C:/dev/vue3-smooth-dnd/packages/lib/src/components/Draggable.js'
 import TaskAdd from "./task-add.vue"
 
 

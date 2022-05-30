@@ -1,7 +1,7 @@
 <template>
     <section class="trello-dates">
         <span class="secondary-section-title">Due date</span>
-        <div class="flex-container flex align-center">
+        <div class="flex align-center">
             <input type="checkbox" />
             <button class="btn-default flex align-center" @click="openEditModal">
                 {{ formatDueDate }}

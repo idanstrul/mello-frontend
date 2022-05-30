@@ -17,7 +17,6 @@
     "date-fns": "^2.28.0",
     "element-plus": "^2.1.5",
     "socket.io-client": "^4.4.1",
-    "v-click-outside": "^3.1.2",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
     "vue3-smooth-dnd": "^0.0.2",

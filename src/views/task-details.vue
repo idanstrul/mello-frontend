@@ -77,7 +77,7 @@
               <activity-log :comments="currTask.comments" @updated="updateComments"></activity-log>
             </div>
           </div>
-          <div class="modal-sidebar flex column">
+          <div class="modal-sidebar flex">
             <!-- <button class="btn side-bar">Join</button> -->
             <span class="secondary-section-title">Add to card</span>
             <button

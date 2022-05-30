@@ -20,7 +20,7 @@ export default {
     },
     methods: {
         getNameAbbreviation(fullName) {
-            console.error('fullName' , fullName)
+            // console.error('fullName' , fullName)
             if (!fullName) return '❓'
             const names = fullName.split(' ')
             // console.log('names', names);
