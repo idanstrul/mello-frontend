@@ -1,5 +1,4 @@
 section.task-details {
-    // font-family: segBold;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -9,13 +8,9 @@ section.task-details {
     color: #172b4d;
 
     .cover {
-        // height: 160px;
         background-color: lightgray;
-        // width: 691px;
-        // position: relative;
         right: 16px;
         width: calc(100vw - 16px);
-        // width: 100%;
         position: relative;
         bottom: 16px;
         max-height: 160px;
@@ -27,8 +22,6 @@ section.task-details {
 
         .cover-clr {
             height: 116px;
-            // width: ;
-            // position: absolute;
         }
     }
 
@@ -66,7 +59,7 @@ section.task-details {
                 }
             }
 
-            @media (min-width: 750px) {
+            @media (min-width: 751px) {
                 .modal-sidebar.flex{
                     flex-direction: column;
                 }
@@ -101,18 +94,7 @@ section.task-details {
                 }
             }
 
-            // ::before.icon{
-            //     color: $clr-dark-icon;
-            //     display: inline-block;
-            //     font-family: trellicons;
-            //     margin-inline-end: 6px;
-            //     margin-inline-start: -6px;
-            //     font-size: 1.143em;
-            //     line-height: 1.25;
-            //     vertical-align: bottom;
-            // }
-
-            @media (min-width: 784px) {
+            @media (min-width: 751px) {
                 width: 768px;
 
                 .cover {
@@ -136,7 +118,7 @@ section.task-details {
                 &.text-l {
                     margin-bottom: 24px;
 
-                    @media (min-width: 784px) {
+                    @media (min-width: 751px) {
                         margin-bottom: 17px;
                     }
                 }
@@ -147,7 +129,7 @@ section.task-details {
                     font-family: "seg";
                     margin: -1px 8px 4px 28px;
 
-                    @media (min-width: 784px) {
+                    @media (min-width: 751px) {
                         margin: 4px 8px 4px 2px;
                     }
 
@@ -160,13 +142,9 @@ section.task-details {
                     }
                 }
 
-                @media (min-width: 784px) {
+                @media (min-width: 751px) {
                     margin-bottom: 17px;
                 }
-                // padding: 8px 0;
-                // margin-bottom: 20px;
-                // position: relative;
-                // bottom: ;
             }
 
             .secondary-section-title {
@@ -191,7 +169,7 @@ section.task-details {
                     &.gutter {
                         margin-bottom: 20px;
 
-                        @media (min-width: 784px) {
+                        @media (min-width: 751px) {
                             margin-bottom: 14px;
                         }
                     }
@@ -235,25 +213,10 @@ section.task-details {
             text-align: start;
             color: $clr-dark-title;
             
-            @media (min-width: 750px) {
+            @media (min-width: 751px) {
                 width: 168px;
             }
-
-            // &.icon::before{
-            //     color: $clr-dark-icon;
-            //     display: inline-block;
-            //     font-family: trellicons;
-            //     margin-inline-end: 6px;
-            //     margin-inline-start: -6px;
-            //     font-size: 1.143em;
-            //     line-height: 1.25;
-            //     vertical-align: bottom;
-            // }
         }
-
-        // i {
-        //     margin: 0 6px 0 0;
-        // }
 
         &:hover {
             color: hsl(218, 76%, 15%);
@@ -271,57 +234,6 @@ section.task-details {
     }
 }
 
-// .icon-like-layout {
-//     // color: $clr-dark-icon;
-//     display: inline-block;
-//     margin-inline-end: 16px;
-//     margin-inline-start: 2px;
-//     vertical-align: middle;
-
-//     @media (min-width: 784px) {
-//         margin-inline-start: -29px;
-//     }
-// }
-
-// &.section-title::before {
-//   vertical-align: middle;
-//   font-size: 1.714rem;
-
-//   .modal-main & {
-//     margin-inline-end: 12px;
-//   }
-// }
-//   }
-
-// .modal-header {
-//   width: 100%;
-// }
-
-// .modal-screen {
-//     background-color: rgba(0, 0, 0, 0.7);
-//     width: 100vw;
-//     height: 100vh;
-// }
-
-// .modal-container {
-//     background-color: white;
-//     position: fixed;
-// }
-
-// .modal-container {
-//     max-width: 500px;
-//     margin: auto;
-// }
-
-// .add-trello-icon{
-//     &-#{$icon-tag}{
-//         &::before{
-//             content: $icon-tag;
-//         }
-//     }
-// }
-
-// icons:
 
 .icon-members {
     @include add-trello-icon("\e946");
@@ -372,7 +284,7 @@ section.task-details {
         bottom: 3px;
     }
 
-    @media (min-width: 784px) {
+    @media (min-width: 751px) {
         &.section-title::before {
             position: absolute;
             left: -28px;
