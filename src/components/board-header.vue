@@ -47,8 +47,8 @@ export default {
     userWorkspace(){
       const name = this.board.createdBy.fullname.split(' ')
       // const lName = this.board.createdBy.fullname.split(' ')
-      // console.log(name[1].split());
-      return name[0] +' ' +  name[1].split('')[0] + `'s`
+      console.log(name);
+      return name[0] + (name[1]? ' ' +  name[1].charAt(0): '') + `'s`
     },
     checkStar(){
       if(this.board.star)
