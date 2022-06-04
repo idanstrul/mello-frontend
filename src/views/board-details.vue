@@ -5,7 +5,6 @@
     <router-view></router-view>
 
     <div class="group-list flex">
-      <!-- <Container>  -->
       <Container
         :drop-placeholder="{
           className: `col-drop`,
@@ -60,15 +59,6 @@
           </div>
         </Draggable>
       </Container>
-      <!-- <Container 
-    :group="group"
-    orientation="vertical"
-    group-name="col-items"
-    :shouldAcceptDrop="(e, payload) =>  (e.groupName === 'col-items')"
-    :get-child-payload="getCardPayload(group.id)"
-    @drop="(e) => onCardDrop(group.id, e)">
-      </Container>-->
-      <!-- </Container> -->
       <group-add
         @addGroup="isAddingGroup = false"
         @saveGroup="updateGroup"
@@ -76,12 +66,10 @@
         :isAddingGroup="isAddingGroup"
       ></group-add>
     </div>
-    <!-- <p>{{board.title}}</p> -->
   </section>
 </template>
 
 <script>
-// import { boardService } from '../services/board.service.js'
 import { Container, Draggable } from "vue3-smooth-dnd";
 // import Container from 'C:/dev/vue3-smooth-dnd/packages/lib/src/components/Container.js'
 // import Draggable from 'C:/dev/vue3-smooth-dnd/packages/lib/src/components/Draggable.js'
@@ -90,16 +78,11 @@ import boardGroup from "../components/board-group.vue";
 import groupAdd from "../components/group-add.vue";
 import boardHeader from "../components/board-header.vue";
 import taskPreview from "../components/task-preview.vue";
-/*import { SOCKET_EMIT_BOARD_WATCH } from "../services/socket.service";
-import { SOCKET_EMIT_BOARD_UPDATE } from "../services/socket.service";
-import bg from '../../src/assets/bg.'
-import TaskPreview from "../components/task-preview.vue";*/
 
 export default {
   name: "board-details",
   data() {
     return {
-      // board: null,
       isAddingGroup: true,
       labelsOpen: false,
       loadDate: false,
@@ -114,18 +97,7 @@ export default {
     taskPreview,
   },
   async mounted() {
-    //  await this.loadBoard()
-    const { boardId } = this.$route.params;
-    const board = await this.$store.dispatch({
-      type: "loadCurrBoard",
-      boardId,
-    });
-    // this.board = board
-    if (!this.board.style) return;
-    document.body.style = `
-   background-image: url(${this.board.style.bg});
-   background-color: ${this.board.style.bg};`;
-    console.log(this.board);
+    await this.loadBoard()
   },
   unmounted() {
     document.body.style = `
@@ -146,62 +118,41 @@ export default {
       await this.$store.dispatch({ type: "saveCurrBoard", boardToSave: board });
     },
     async saveTask(taskToSave, groupId) {
-      // console.log('hi');
       // console.log(taskToSave, groupIdx);
       const board = await this.$store.dispatch({
         type: "saveTask",
         groupId,
         taskToSave,
       });
-      // this.board = board
-      // this.loadBoard()
-      // this.board = board
-      // this.board.groups[groupIdx].tasks.findIndex(t => t.id === taskToSave.id)
-      // this.updateGroup(this.board.groups[groupIdx])
-      // await this.$store.dispatch({type: 'updateGroup', groupToSave})
-
-      // const idx = this.board.groups.findIndex(g => g.id === groupId)
-      // this.board.groups[idx].tasks
-      //this.socketUpdateBoard();
     },
     async removeGroup(group) {
-      const board = await this.$store.dispatch({ type: "removeGroup", group });
-      // this.board = board
-      // this.socketUpdateBoard();
+      await this.$store.dispatch({ type: "removeGroup", group });
     },
     async removeTask(task, group) {
-      const board = await this.$store.dispatch({
+      await this.$store.dispatch({
         type: "removeTask",
         groupId: group.id,
         taskId: task.id,
       });
-      // this.board = board
-      //this.socketUpdateBoard();
     },
     async updateGroup(groupToSave) {
       if (!this.isAddingGroup) this.isAddingGroup = true;
-      // console.log(groupToSave);
       if (!groupToSave.title) return;
-      const board = await this.$store.dispatch({
+      await this.$store.dispatch({
         type: "updateGroup",
         groupToSave,
       });
-      // this.board = board
-      //this.socketUpdateBoard();
     },
     async loadBoard() {
       const { boardId } = this.$route.params;
-      const board = await this.$store.dispatch({
+      await this.$store.dispatch({
         type: "loadCurrBoard",
         boardId,
       });
-      // const board = this.$store.getters.currBoard
-      this.board = board;
-      if (!this.board.style) return board;
+      if (!this.board.style) return ;
       document.body.style = `
     background-image: url(${this.board.style.bg});
     background-color: ${this.board.style.bg};`;
-      return board;
     },
     async onColumnDrop(dropResult) {
       const scene = Object.assign({}, this.board);
@@ -211,8 +162,7 @@ export default {
       dropResult.payload.id = this.board.groups[dropResult.removedIndex].id;
       console.log("drop>>", dropResult);
       scene.groups = utilService.applyDrag(scene.groups, dropResult);
-      // this.board = JSON.parse(JSON.stringify(scene))
-      const board = await this.$store.dispatch({
+      await this.$store.dispatch({
         type: "saveCurrBoard",
         boardToSave: scene,
       });
@@ -234,58 +184,41 @@ export default {
         const newColumn = Object.assign({}, column);
 
         // check if element was ADDED in current column
-        if (dropResult.removedIndex == null && dropResult.addedIndex >= 0) {
+        // if (dropResult.removedIndex == null && dropResult.addedIndex >= 0) {
           // your action / api call
           // dropResult.payload.loading = true
           // simulate api call
           // setTimeout(function(){ dropResult.payload.loading = false }, (Math.random() * 5000) + 1000);
-        }
+        // }
 
         newColumn.tasks = utilService.applyDrag(newColumn.tasks, dropResult);
         scene.groups.splice(itemIndex, 1, newColumn);
-        // this.board = JSON.parse(JSON.stringify(scene))
-        const board = await this.$store.dispatch({
+        await this.$store.dispatch({
           type: "saveCurrBoard",
           boardToSave: scene,
         });
-        // this.board = board
-        // this.$emit('move', scene)
-        // console.log(scene);
-        // this.board = scene
       }
     },
-    enableScroll(ev){
+     //This function is actually a patch for a bug in the smooth-dnd lib. 
+     //Without this scrolling is disabled in touch devices after every touch 
+     //on a draggable, untill user taps outside the draggable.
+    enableScroll(ev){  
       console.log('ev is', ev)
       window.document.body.classList.remove('smooth-dnd-no-user-select', 'smooth-dnd-disable-touch-action')
     },
-    // async move(boardToSave){
-    //   const board = await this.$store.dispatch({type: 'saveCurrBoard', boardToSave})
-    //   this.loadBoard()
-    // },
     goToDetail(group, task) {
       this.$router.push(`/board/${this.board._id}/task/${group.id}/${task.id}`);
     },
-    /*socketUpdateBoard() {
-     console.log("SOCKETUPDATEBOARDMOTHREREUFJKER SOCKETING");
-     socketService.emit(SOCKET_EMIT_BOARD_UPDATE, this.unfilteredBoard);
-   },*/
   },
   watch: {
     "$route.params.boardId"(id) {
       if (!id) return;
-      console.log("Changed to", id);
+      console.error("Changed to", id);
       this.loadBoard();
       {
         immediate: true;
       }
     },
-    // '$route.params'(p) {
-    //   if (!p.boardId) return
-    //   if (!p.taskId)
-    //     this.loadBoard()
-    //   //  socketService.emit(SOCKET_EMIT_BOARD_WATCH, this.boardId);
-    //   { immediate: true }
-    // },
   },
 };
 </script>

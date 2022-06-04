@@ -1,10 +1,7 @@
 <template>
-  <!-- v-clickoutside="closeModal" -->
   <section v-if="currTask" class="task-details">
     <div class="modal-screen flex center">
       <div v-clickoutside="closeModal" class="modal-container flex column center">
-        <!-- v-clickoutside="closeModal" -->
-        <div v-if="false" class="cover"></div>
         <div class="cover" v-if="currTask.style">
           <img
             v-if="currTask.style && currTask.style.bg.split('')[0] !== '#'"
@@ -202,18 +199,11 @@ export default {
       },
       isDeleteContentTeleported: false,
       isEditModalMounted: false,
-      // currTask: null,
-      // currTaskLabels: null,
       currTaskId: '',
       parentGroupId: '',
       parentGroupName: ''
     }
   },
-  mounted() {
-
-    // console.log('check', this.currTask.style.bg.split('')[0] !== '#');
-  },
-
   methods: {
 
     checkImg() {
@@ -230,7 +220,6 @@ export default {
         groupId: this.parentGroupId,
         taskToSave: JSON.parse(JSON.stringify(taskToSave))
       })
-      //await this.socketUpdateBoard();
       console.log('Current task saved!');
       /// This function returns a promise with the value of 
       //the current board. I'm not sure if methods 
@@ -276,7 +265,6 @@ export default {
       const boardId = this.$route.params.boardId
       // console.log('boardId',boardId);
       this.$router.push({ name: 'board', params: { boardId } })
-      //this.socketUpdateBoard();
     },
     openDeleteModal(event) {
       // console.log('event', event);
@@ -386,11 +374,6 @@ export default {
       // console.log('this.isDeleteContentTeleported', this.isDeleteContentTeleported);
     }
   },
-  // watch: {
-  //   this.updatedTask: {
-
-  //   }
-  // },
   components: {
     mainEditModal,
     trelloLabels,

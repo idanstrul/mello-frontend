@@ -10,11 +10,8 @@ export const boardStore = {
         currTaskIdxs: null
     },
     getters: {
-        /* boards(state) {
-             return JSON.parse(JSON.stringify(state.boards)) //maybe there will be no need for this
-         },*/
         boards(state) {
-            return JSON.parse(JSON.stringify(state.boards))
+            return JSON.parse(JSON.stringify(state.boards)) //maybe there will be no need for this
         },
         starBoards(state) {
             return JSON.parse(JSON.stringify(state.boards.filter(b => b.star)))
@@ -127,15 +124,12 @@ export const boardStore = {
             }
         },
         async saveCurrBoard(context, { boardToSave }) {
-            // console.log(boardToSave.groups[1].tasks);
-            // console.log('hi');
             // context.commit({ type: 'setIsLoading', loadingStatus: true })
             const boardUnchanged = context.getters.currBoard
             try {
                 context.commit({ type: 'setCurrBoard', currBoard: boardToSave })
                 const currBoard = await boardService.save(boardToSave)
                 socketService.emit('board update', boardToSave)
-                // console.error('saving board')
                 context.dispatch({ type: 'flashUserMsg', msg: `Board ${currBoard._id} saved successfully`, style: 'success' })
                 return currBoard
             }
@@ -149,8 +143,7 @@ export const boardStore = {
             }
         },
         async updateGroup(context, { groupToSave }) {
-            console.log(groupToSave);
-            // debugger
+            // console.log(groupToSave);
             context.commit({ type: 'setIsLoading', loadingStatus: true })
             try {
                 const board = context.getters.currBoard

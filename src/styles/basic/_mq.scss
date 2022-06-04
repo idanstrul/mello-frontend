@@ -1,7 +1,43 @@
 @media (max-width: 750px) {
   
     .modal-container.flex.column.center {
-    /*     padding: 8px; */
+        padding: 16px 8px;
+    }
+
+    section.task-details .cover {
+        right: 8px;
+    }
+
+    .modal-header.section-title.text-l.icon-task-title {
+        margin-inline-start: 6px;
+    }
+    
+    .notations.flex.wrap {
+        margin-inline-start: 8px;
+    }
+    
+    span.section-title.text-m.icon-description {
+        margin-inline-start: 2px;
+    }
+    
+    .section-title.text-m.icon-attachment {
+        margin-inline-start: 9px;
+    }
+    
+    section.activity-log {
+        margin-inline-start: 9px;
+    }
+    
+    .checklists {
+        margin-inline-start: 7px;
+    }
+    
+    .make-btn span.input-title {
+        margin-inline-start: -7px;
+    }
+    
+    .description {
+        margin-inline-start: 7px;
     }
 }
 
