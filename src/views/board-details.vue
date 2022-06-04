@@ -6,6 +6,12 @@
 
     <div class="group-list flex">
       <Container
+        :drop-placeholder="{
+          className: `col-drop`,
+          animationDuration: '100',
+          showOnTop: false,
+        }"
+        drag-class="col-drag"
         group-name="cols"
         tag="div"
         orientation="horizontal"
@@ -26,6 +32,12 @@
                 group-name="col-items"
                 :shouldAcceptDrop="(e, payload) => e.groupName === 'col-items'"
                 :get-child-payload="getCardPayload(group.id)"
+                :drop-placeholder="{
+                  className: `item-drop`,
+                  animationDuration: '200',
+                  showOnTop: true,
+                }"
+                drag-class="item-drag"
                 @drop="(e) => onCardDrop(group.id, e)"
               >
                 <task-preview

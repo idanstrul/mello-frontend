@@ -2,7 +2,7 @@
     <section class="date-edit">
             <Datepicker
             AutoApply
-            v-model="taskDate"
+            v-model="dueDate"
             @update:modelValue="test"
             utc inline
             :startTime="{}"
@@ -14,7 +14,7 @@
                 </template>
             </Datepicker>
         <!-- <p class="secondary-section-title">Start date</p> -->
-            <p class="date-title">Due date</p>
+            <p v-if="currTask.dueDate" class="date-title">Due date</p>
 
         <!-- <el-calendar v-model="currTaskDates.startDate" /> -->
         <!-- <el-date-picker
@@ -71,6 +71,11 @@ export default {
             return JSON.parse(JSON.stringify(this.currTask))
         }
 
+    },
+    mounted(){
+        if(this.currTask.dueDate)
+        this.dueDate = new Date(this.currTask.dueDate)
+        else this.dueDate = null
     },
     methods:{
         selectDate(){

@@ -1,4 +1,64 @@
 .task-preview {
+
+    .task-preview-comments,
+    .task-preview-attachments,
+    .task-preview-checklists {
+        color: #6b778c;
+        font-size: 12px;
+        // vertical-align: botto;
+        margin-block-start: 5px;
+        margin-inline-start: 10px;
+
+        span:first-child {
+            font-size: 16px;
+            font-family: trellicons;
+            vertical-align: bottom;
+            margin-inline-end: 3px;
+
+            &::before {
+                content: "\e91e";
+            }
+        }
+    }
+
+    .task-preview-attachments {
+        span:first-child {
+            &::before {
+                content: "\e908";
+            }
+        }
+
+    }
+
+    .task-preview-checklists {
+
+        &.complete {
+            position: relative;
+            bottom: 3px;
+            // margin-block-end: 20px;
+
+            section {
+
+                background-color: #61bd4f;
+                color: $clr-base;
+                border-radius: 3px;
+                height: 24px;
+                width: 47px;
+                padding-inline-start: 3.5px;
+                padding-block-start: 3px;
+            }
+
+            // line-height: 24px;
+        }
+
+        span:first-child {
+            &::before {
+                content: "\e91a";
+            }
+        }
+
+    }
+
     .big-cover {
         min-height: fit-content;
     }
@@ -142,6 +202,7 @@
         justify-content: space-between;
         max-width: 255px;
         min-height: 32px;
+        position: relative;
         // line-height: 0.1;
     }
 
@@ -344,7 +405,9 @@
     // float: right;
     position: relative;
     // left: 100px;
-    margin-block-end: 5px;
+    // position: absolute;
+    // right: 0;
+    // margin-block-end: 5px;
     margin-inline-end: 5px;
 
     // bottom: 0px;
