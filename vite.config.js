@@ -12,7 +12,7 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: '../mellow-backend/public',
+    outDir: '../backend/public',
     emptyOutDir: true
   }
 })
