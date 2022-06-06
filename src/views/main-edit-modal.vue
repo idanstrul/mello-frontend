@@ -41,6 +41,7 @@ export default {
 
         // }
         // console.log('this.posCorrected',this.posCorrected);
+        window.addEventListener("resize", this.correctPosition);
         this.$emit('mounted')
     },
     data() {
@@ -108,6 +109,7 @@ export default {
 
     },
     unmounted() {
+        window.removeEventListener("resize", this.correctPosition);
         console.log('main edit modal is unmounted');
         this.$emit('unmounted')
     }
