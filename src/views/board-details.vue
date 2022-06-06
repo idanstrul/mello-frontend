@@ -16,8 +16,9 @@
         tag="div"
         orientation="horizontal"
         @drop="onColumnDrop($event)"
-        @drag-end="enableScroll"
+        @touchend="enableScroll"
       >
+        <!-- @drag-end="enableScroll" -->
         <!-- :drag-begin-delay="2000" -->
         <Draggable v-for="group in board.groups" :key="group.id">
           <div>
