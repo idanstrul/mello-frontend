@@ -36,21 +36,22 @@ This is the "Sprint #4" and the final project of the Coding Academy web-developm
 
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- Task management interface in boards and groups.
+- Drag and drop interface of task groups and tasks. 
+- Task members allocation. 
+- Labels by color and text + Customization. 
+- Checklists.
+- Due dates. 
+- Upload attachments.
+- Task cover feature with Unsplash image search.
+- Task descriptions and comments.
+- Filtering for members and labels 
+- Real time updates using web sockets. 
 
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
-
-
-## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
 
 
 ## Usage
